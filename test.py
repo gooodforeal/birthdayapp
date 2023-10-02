@@ -28,5 +28,12 @@ class TestDatabase(unittest.TestCase):
 
     def test_db_inout(self):
         d = Database("test")
+        d.sql_create_table()
         d.sql_insert_into_table(("DR", datetime.datetime.now().date()))
         self.assertEqual(d.sql_get_by_date("2023-10-02"), (1, 'DR', '2023-10-02'))
+
+    def test_to_get_all_items_from_db(self):
+        d = Database("test")
+        d.sql_create_table()
+        d.sql_insert_into_table(("DR", "2023-10-01"))
+        self.assertEqual(d.sql_get_all_items(), [(1, "DR", "2023-10-01")])
