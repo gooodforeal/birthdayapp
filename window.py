@@ -9,12 +9,13 @@ class Window:
         self.window_geometry = f"{width}x{height}"
         self.root.geometry(self.window_geometry)
         self.root.resizable(resizable[0], resizable[1])
+        self.lab_title = Label(self.root, text="Birthday App", font="Impact 30")
 
-        self.
     def draw_widgets(self):
-        pass
+        self.lab_title.pack(anchor="n")
 
     def run(self):
+        self.draw_widgets()
         self.root.mainloop()
 
 

@@ -11,5 +11,6 @@ class TestMainWindow(unittest.TestCase):
     def test_label_text(self):
         wind = Window(800, 600, "birthdayapp")
         self.assertEqual(wind.lab_title.cget("text"), "Birthday App")
+        self.assertEqual(wind.lab_title.cget("font"), "Impact 30")
 
 
