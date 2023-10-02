@@ -26,5 +26,5 @@ class Window:
 
 
 
-wind = Window(1200, 600, "birthdayapp")
-wind.run()
+#wind = Window(1200, 600, "birthdayapp")
+#wind.run()

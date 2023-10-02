@@ -1,5 +1,7 @@
 import unittest
 from window import Window
+from db import Database
+import os
 
 
 class TestMainWindow(unittest.TestCase):
@@ -17,4 +19,9 @@ class TestMainWindow(unittest.TestCase):
         wind = Window(800, 600, "birthdayapp")
         self.assertIn("create_task", wind.create_button.cget("command"), "Error, Wrong function activaited!")
 
+
+class TestDatabase(unittest.TestCase):
+    def test_db_connection(self):
+        test_db = Database("test")
+        self.assertIsNotNone(test_db.con)
 
