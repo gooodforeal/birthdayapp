@@ -5,6 +5,7 @@ from db import Database
 
 class CreateWindow:
     def __init__(self, parent, width, height, title, resizable=(False, False)):
+        self.parent = parent
         self.root = Toplevel(parent)
         self.window_title = title
         self.root.title(self.window_title)
