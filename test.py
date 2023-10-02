@@ -4,6 +4,7 @@ from db import Database
 import datetime
 import os
 from reg import date_check
+from createwindow import CreateWindow
 
 
 class TestMainWindow(unittest.TestCase):
@@ -50,3 +51,15 @@ class ReDateCheck(unittest.TestCase):
     def test_date_check_if_empty(self):
         date = ""
         self.assertFalse(date_check(date))
+
+
+class TestCreateWindow(unittest.TestCase):
+    def test_title_exists(self):
+        w = Window(1200, 600, "birthdayapp")
+        cw = CreateWindow(w.root, 300, 200, "Создание напоминания", (False, False))
+        self.assertIsNotNone(cw.window_title)
+
+    def test_button_exists(self):
+        w = Window(1200, 600, "birthdayapp")
+        cw = CreateWindow(w.root, 300, 200, "Создание напоминания", (False, False))
+        self.assertIsNotNone(cw.create_button)
