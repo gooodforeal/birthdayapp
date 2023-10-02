@@ -10,6 +10,10 @@ class Window:
         self.root.geometry(self.window_geometry)
         self.root.resizable(resizable[0], resizable[1])
 
+        self.
+    def draw_widgets(self):
+        pass
+
     def run(self):
         self.root.mainloop()
 
