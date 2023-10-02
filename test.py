@@ -1,6 +1,7 @@
 import unittest
 from window import Window
 from db import Database
+import datetime
 import os
 
 
@@ -25,3 +26,7 @@ class TestDatabase(unittest.TestCase):
         test_db = Database("test")
         self.assertIsNotNone(test_db.con)
 
+    def test_db_inout(self):
+        d = Database("test")
+        d.sql_insert_into_table(("DR", datetime.datetime.now().date()))
+        self.assertEqual(d.sql_get_by_date("2023-10-02"), (1, 'DR', '2023-10-02'))
