@@ -22,9 +22,15 @@ class Database:
         curs.execute(ex, entities)
         self.con.commit()
 
+    def sql_get_all_items(self):
+        elements = self.con.execute('SELECT * FROM dates').fetchall()
+        return elements
+
     def sql_get_by_date(self, arg_date):
         res = self.con.execute('SELECT * FROM dates WHERE date_of_birthday = ?', (arg_date,)).fetchone()
         return res
+
+
 
 
 
