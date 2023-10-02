@@ -13,4 +13,8 @@ class TestMainWindow(unittest.TestCase):
         self.assertEqual(wind.lab_title.cget("text"), "Birthday App")
         self.assertEqual(wind.lab_title.cget("font"), "Impact 30")
 
+    def test_create_button(self):
+        wind = Window(800, 600, "birthdayapp")
+        self.assertIn("create_task", wind.create_button.cget("command"), "Error, Wrong function activaited!")
+
 
