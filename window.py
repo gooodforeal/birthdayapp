@@ -1,4 +1,5 @@
 from tkinter import *
+from createwindow import CreateWindow
 
 
 class Window:
@@ -17,13 +18,11 @@ class Window:
         self.create_button.pack(side="bottom", pady=25)
 
     def create_task(self):
-        pass
+        create_window = CreateWindow(self.root, 300, 200, "Создание напоминания", (False, False))
 
     def run(self):
         self.draw_widgets()
         self.root.mainloop()
-
-
 
 
 #wind = Window(1200, 600, "birthdayapp")
